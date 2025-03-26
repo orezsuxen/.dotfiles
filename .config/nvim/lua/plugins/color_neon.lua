@@ -1,0 +1,4 @@
+return {
+	"rafamadriz/neon",
+	-- opts = {},
+}
