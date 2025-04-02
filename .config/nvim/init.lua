@@ -50,10 +50,10 @@ vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.relativenumber = true -- Relative line numbers
 -- vim.opt.grepformat = "%f:%l:%c:%m" -- some grep helper ?
 -- vim.opt.grepprg = "rg --vimgrep" -- use ripgrep
-vim.opt.laststatus = 3 -- when to display a status line
-vim.opt.tabstop = 2 -- Number of spaces tabs count for
-vim.opt.termguicolors = true -- True color support
-vim.opt.wrap = false -- Disable line wrap
+vim.opt.laststatus = 3         -- when to display a status line
+vim.opt.tabstop = 2            -- Number of spaces tabs count for
+vim.opt.termguicolors = true   -- True color support
+vim.opt.wrap = false           -- Disable line wrap
 vim.opt.colorcolumn = "80,100" -- color column
 -- vim.opt.showcmd = false -- showcmd
 vim.opt.shortmess:append({ W = true, I = true, c = true })
@@ -100,7 +100,7 @@ function MyFoldtext()
 	table.insert(text, { " - " .. n_lines .. text_lines, { "Folded" } })
 
 	return text
-end 
+end
 
 vim.opt.foldtext = "v:lua.MyFoldtext()"
 ]]
@@ -256,5 +256,6 @@ local P = {
 --==============================================
 
 require("lazy").setup(P)
+
 
 vim.cmd.colorscheme("github_dark_dimmed")
