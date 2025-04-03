@@ -9,8 +9,8 @@ return {
 	cmd = "Neotree",
 	keys = {
 		{ "<leader>e",  ":Neotree reveal toggle left<CR>",       { desc = "NeoTree reveal" } },
-		{ "<leader>be", ":Neotree buffers reveal toggle<CR>",    { desc = "Neotree buffers" } },
-		{ "<leader>ge", ":Neotree git_status reveal toggle<CR>", { desc = "Neotree git_status" } },
+		{ "<leader>Eb", ":Neotree buffers reveal toggle<CR>",    { desc = "Neotree buffers" } },
+		{ "<leader>Eg", ":Neotree git_status reveal toggle<CR>", { desc = "Neotree git_status" } },
 		{ "<leader>Ef", ":Neotree reveal toggle float<CR>",      { desc = "Neotree reveal in float" } },
 	},
 	opts = {

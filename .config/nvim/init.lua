@@ -15,7 +15,7 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.mouse = "a"
 vim.opt.showmode = false --already in statusline
-vim.opt.clipboard = "unnamedplus"
+-- vim.opt.clipboard = "unnamedplus"
 vim.opt.breakindent = true
 vim.opt.undofile = true
 vim.opt.ignorecase = true
@@ -40,10 +40,10 @@ vim.opt.hlsearch = true
 
 -- from myself
 vim.opt.autowrite = true -- Enable auto write
--- vim.opt.cmdheight = 1 -- cmdline height
+--TEST:
+vim.opt.cmdheight = 1 -- cmdline height
 -- vim.opt.pumblend = 20          -- Popup blend
 -- vim.opt.pumheight = 15         -- Maximum number of entries in a popup
--- vim.opt.relativenumber = false -- Relative line numbers
 vim.opt.expandtab = true -- Use spaces instead of tabs
 -- vim.opt.sidescrolloff = 8      -- Columns of context
 -- vim.opt.smartindent = true     -- Insert indents automatically
@@ -129,15 +129,15 @@ vim.keymap.set("i", "<A-l>", "<C-o>A", { desc = "goto end of line" })
 vim.keymap.set("i", "<A-h>", "<C-o>I", { desc = "goto start of line" })
 
 -- diagnostics
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+-- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
+-- vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
 -- vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 -- vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 --
 -- lists views
 vim.keymap.set("n", "<leader>ld", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 vim.keymap.set("n", "<leader>le", vim.diagnostic.open_float, { desc = "Show diagnostic Error messages" })
-vim.keymap.set("n", "<leader>lt", "<cmd>TodoLocList<CR>", { desc = "Todo Location List" })
+--NOTE: vim.keymap.set("n", "<leader>lt", "<cmd>TodoLocList<CR>", { desc = "Todo Location List" })
 
 -- terminal
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
@@ -216,6 +216,10 @@ vim.keymap.set("i", ";", ";<c-g>u")
 -- better indent
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
+
+
+--TEST:
+vim.keymap.set("n", "J", "" )
 --
 -- autocmds from kickstart
 --
@@ -258,4 +262,4 @@ local P = {
 require("lazy").setup(P)
 
 
-vim.cmd.colorscheme("github_dark_dimmed")
+-- vim.cmd.colorscheme("github_dark_dimmed")

@@ -8,7 +8,7 @@ return { -- LSP Configuration & Plugins
 
 		-- Useful status updates for LSP.
 		-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-		-- { "j-hui/fidget.nvim", opts = {} },
+		{ "j-hui/fidget.nvim", opts = {} },
 
 		-- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
 		-- used for completion, annotations and signatures of Neovim apis
@@ -28,6 +28,7 @@ return { -- LSP Configuration & Plugins
 				map("<leader>ss", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
 				map("<leader>sW", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
+        --Note: in new version builtin
 				map("<leader>cr", vim.lsp.buf.rename, "[R]ename")
 				map("<leader>ca", vim.lsp.buf.code_action, "code [A]ction")
 				map("<leader>cf", vim.lsp.buf.format, "[F]ormat code")
@@ -74,9 +75,9 @@ return { -- LSP Configuration & Plugins
 			end,
 		})
 
-		require("lspconfig").gopls.setup({})
-		require("lspconfig").rust_analyzer.setup({})
-		require("lspconfig").clangd.setup({})
+		--require("lspconfig").gopls.setup({})
+		--require("lspconfig").rust_analyzer.setup({})
+		--require("lspconfig").clangd.setup({})
 		require("lspconfig").lua_ls.setup({
 			on_init = function(client)
 				if client.workspace_folders then
@@ -118,21 +119,21 @@ return { -- LSP Configuration & Plugins
 			-- gopls = {},
 			-- pyright = {},
 
-			-- lua_ls = {
-			-- cmd = {...},
+			lua_ls = {
+			--cmd = {...},
 			-- filetypes = { ...},
-			-- capabilities = {},
-			-- settings = {
-			-- Lua = {
-			-- completion = {
-			-- callSnippet = "Replace",
-			-- },
-			-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-			-- diagnostics = { disable = { 'missing-fields' } },
-			-- },
-			-- },
-			-- },
-		}
+			capabilities = {},
+			settings = {
+			Lua = {
+			completion = {
+			callSnippet = "Replace",
+			},
+			--You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+			diagnostics = { disable = { 'missing-fields' } },
+			},
+			},
+			},
+		},
 
 		require("mason").setup()
 		--

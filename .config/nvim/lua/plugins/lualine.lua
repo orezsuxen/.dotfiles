@@ -74,9 +74,9 @@ return {
 					"buffers",
 					mode = 2,
 					use_mode_colors = true,
-					-- buffers_color = {
-					-- 	active = { gui = "bold,italic", fg = "black", bg = "grey" },
-					-- },
+					buffers_color = {
+						active = { gui = "bold,underline"--[[, fg = "black", bg = "grey"--]] },
+					},
 				},
 				-- "encoding",
 				-- "fileformat",
@@ -89,6 +89,11 @@ return {
 					use_mode_colors = true,
 					show_modified_status = false,
 					symbols = { modified = "+" },
+          tabs_color = {
+            -- Same values as the general color option can be used here.
+            active = {gui = "bold,italic"},     -- Color for active tab.
+            inactive = {gui = ""}, -- Color for inactive tab.
+          },
 				},
 				"progress",
 				"location", --[[ function() return " " .. os.date("%R") end, ]]

@@ -18,21 +18,21 @@ return {
 			require("trouble").toggle("diagnostics")
 		end, { desc = "toggle trouble" })
 
-		vim.keymap.set("n", "<leader>cs", function()
+		vim.keymap.set("n", "<leader>ls", function()
 			require("trouble").toggle("symbols")
-		end, { desc = "code symbols" })
+		end, { desc = "list symbols" })
 
-		vim.keymap.set("n", "<leader>cS", function()
+		vim.keymap.set("n", "<leader>lS", function()
 			require("trouble").toggle("symbols").opts.win.position = "left"
-		end, { desc = "code symbols left side" })
+		end, { desc = "list symbols left side" })
 
-		vim.keymap.set("n", "<leader>cl", function()
+		vim.keymap.set("n", "<leader>ll", function()
 			require("trouble").toggle("lsp")
-		end, { desc = "code LSP information" })
+		end, { desc = "list LSP information" })
 
-		vim.keymap.set("n", "<leader>cL", function()
+		vim.keymap.set("n", "<leader>lL", function()
 			require("trouble").toggle("lsp").opts.win.position = "left"
-		end, { desc = "code LSP information" })
+		end, { desc = "list LSP information" })
 
 		vim.keymap.set("n", "<leader>xL", function()
 			require("trouble").toggle("loclist")
