@@ -22,16 +22,16 @@ return { -- LSP Configuration & Plugins
 				end
 
 				map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-				map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+				map("<leader>sr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 				map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
 				map("<leader>sD", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
 				map("<leader>ss", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
 				map("<leader>sW", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
-        --Note: in new version builtin
-				map("<leader>cr", vim.lsp.buf.rename, "[R]ename")
-				map("<leader>ca", vim.lsp.buf.code_action, "code [A]ction")
-				map("<leader>cf", vim.lsp.buf.format, "[F]ormat code")
+				--Note: in new version builtin
+				--map("<leader>cr", vim.lsp.buf.rename, "[R]ename")
+				--map("<leader>ca", vim.lsp.buf.code_action, "code [A]ction")
+				--map("<leader>cf", vim.lsp.buf.format, "[F]ormat code")
 
 				map("K", vim.lsp.buf.hover, "Hover Documentation")
 				map("J", vim.diagnostic.open_float, "Line Diagnostic")
@@ -136,7 +136,6 @@ return { -- LSP Configuration & Plugins
 		},
 
 		require("mason").setup()
-		--
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			-- 	-- "stylua", -- Used to format Lua code
