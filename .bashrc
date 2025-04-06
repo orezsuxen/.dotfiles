@@ -1,28 +1,26 @@
-# Sample .bashrc for SUSE Linux
-# Copyright (c) SUSE Software Solutions Germany GmbH
-
-# There are 3 different types of shells in bash: the login shell, normal shell
-# and interactive shell. Login shells read ~/.profile and interactive shells
-# read ~/.bashrc; in our setup, /etc/profile sources ~/.bashrc - thus all
-# settings made here will also take effect in a login shell.
 #
-# NOTE: It is recommended to make language settings in ~/.profile rather than
-# here, since multilingual X sessions would not work properly if LANG is over-
-# ridden in every subshell.
-
-test -s ~/.alias && . ~/.alias || true
+# ~/.bashrc
+#
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias l='ls -la --color=auto'
+alias grep='grep --color=auto'
 alias dirs='dirs -v'
 
 #config
 alias cfggit='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 
+# export EDITOR=nvim
+# export VISUAL=nvim
+
 prompt() {
     PS1='\n\[\033[1;32m\][$SHLVL][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\[\033[0m\]\n\[\033[1;32m\]\$\[\033[0m\] '
 }
 PROMPT_COMMAND=prompt
+
 
 eval "$(fzf --bash)"
 eval "$(zoxide init bash --cmd cd)"
